@@ -3,7 +3,7 @@ FROM debian:latest
 ###############################
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
-    texlive-full
+    texlive-latex-base
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
