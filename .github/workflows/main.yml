@@ -1,7 +1,7 @@
 name: push to dockerhub
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
   schedule:
     - cron: "0 15 6 5 * ?"
 
