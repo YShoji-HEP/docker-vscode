@@ -36,7 +36,7 @@ USER vscode
 RUN echo -e "defscrollback 10000\ntermcapinfo xterm* ti@:te@" > ~/.screenrc
 
 ###############################
-RUN echo 'TEXLIVE_ARCH=`ls /usr/local/texlive/bin/`'
+RUN echo 'TEXLIVE_ARCH=`ls /usr/local/texlive/bin/`' >> ~/.bashrc
 RUN echo 'export PATH="$PATH:/usr/local/texlive/bin/$TEXLIVE_ARCH"' >> ~/.bashrc
 RUN echo 'export MANPATH="$MANPATH:/usr/local/texlive/texmf-dist/doc/man"' >> ~/.bashrc
 RUN echo 'export INFOPATH="$INFOPATH:/usr/local/texlive/texmf-dist/doc/info"' >> ~/.bashrc
