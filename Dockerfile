@@ -3,11 +3,7 @@ FROM debian:latest
 ###############################
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
-    texlive-latex-base ca-certificates
-
-RUN apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
-    wget cpanminus libyaml-tiny-perl libfile-homedir-perl
+    wget ca-certificates cpanminus libyaml-tiny-perl libfile-homedir-perl
 
 RUN wget https://raw.githubusercontent.com/cmhughes/latexindent.pl/main/helper-scripts/latexindent-module-installer.pl && echo "Y"|perl latexindent-module-installer.pl && rm latexindent-module-installer.pl
 

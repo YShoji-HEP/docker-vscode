@@ -5,7 +5,7 @@ LaTeX, Python3, C++, Fortran, Rust for VSCode Remote SSH
 ## Packages
 
 ### LaTeX
-* texlive-full
+* texlive (external volume)
 * latexindent
 
 ### Python
