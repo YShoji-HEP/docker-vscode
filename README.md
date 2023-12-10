@@ -1,8 +1,6 @@
 # Development environment for VSCode Remote SSH
 ## Description
-LaTeX, Python3, C++, Fortran, Rust for VSCode Remote SSH
-
-(Only for AArch64)
+LaTeX, Python3, C++, Fortran, Rust, Node.js for VSCode Remote SSH
 
 ## Packages
 
