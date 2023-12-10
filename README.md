@@ -2,6 +2,8 @@
 ## Description
 LaTeX, Python3, C++, Fortran, Rust for VSCode Remote SSH
 
+(Only for AArch64)
+
 ## Packages
 
 ### LaTeX
@@ -30,8 +32,8 @@ LaTeX, Python3, C++, Fortran, Rust for VSCode Remote SSH
 * hdf5
 * ssl
 
-### Install TeX Live
-Run the following to install TeX Live
+## Install TeX Live
+Mount an external volume to `/usr/local/texlive` and run the following to install TeX Live.
 ```
 #!/bin/bash
 wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
