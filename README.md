@@ -30,6 +30,19 @@ LaTeX, Python3, C++, Fortran, Rust for VSCode Remote SSH
 * hdf5
 * ssl
 
+### Install TeX Live
+Run the following to install TeX Live
+```
+#!/bin/bash
+wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+tar zxf install-tl-unx.tar.gz
+rm install-tl-unx.tar.gz
+cd install-tl-*
+perl ./install-tl --no-interaction --portable
+cd ..
+rm -r install-tl-*
+```
+
 ## Docker
 Optionally mount `\home\vscode\.ssh`,  `\home\vscode\.gitconfig`, `\home\vscode\.vscode-server`,   `\etc\ssh`.
 ```
@@ -42,6 +55,8 @@ services:
     restart: always
     hostname: vscode
     image: yshojihep/vscode:latest
+    volumes:
+      - /path/to/vol:/usr/local/texlive
 ```
 
 ## Kubernetes
@@ -63,4 +78,7 @@ spec:
       image: yshojihep/vscode:latest
       ports:
         - containerPort: 22
+      volumeMounts:
+        - name: texlive
+          mountPath: /usr/local/texlive
 ```
