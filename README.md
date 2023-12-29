@@ -1,6 +1,8 @@
 # Development environment for VSCode Remote SSH
 ## Description
-LaTeX, Python3, C++, Fortran, Rust, Node.js for VSCode Remote SSH
+LaTeX, Python3, C++, Fortran, Rust, Node.js for VSCode Remote SSH/Tunnel.
+
+The container can be accessed via VSCode Remote SSH. To use VSCode Remote Tunnel, see the log of the container.
 
 ## Packages
 
@@ -44,7 +46,7 @@ rm -r install-tl-*
 ```
 
 ## Docker
-Optionally mount `\home\vscode\.ssh`,  `\home\vscode\.gitconfig`, `\home\vscode\.vscode-server`,   `\etc\ssh`.
+Optionally mount `\home\vscode\.ssh`, `\home\vscode\.gitconfig`, `\home\vscode\.vscode`, `\home\vscode\.vscode-server`, `\etc\ssh`.
 ```
 version: "3"
 services:
