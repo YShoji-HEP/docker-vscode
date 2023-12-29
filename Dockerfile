@@ -31,6 +31,10 @@ RUN apt-get update \
 ###############################
 RUN useradd -m -d /home/vscode -s /bin/bash vscode
 
+RUN curl -skL "https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-arm64" --output vscode_cli.tar.gz \
+    && tar -xf vscode_cli.tar.gz -C /usr/bin \
+    && rm vscode_cli.tar.gz
+
 USER vscode
 
 RUN echo -e "defscrollback 10000\ntermcapinfo xterm* ti@:te@" > ~/.screenrc
@@ -55,4 +59,8 @@ RUN export NVM_DIR="$HOME/.nvm" && \. "$NVM_DIR/nvm.sh" && \. "$NVM_DIR/bash_com
 
 USER root
 
-CMD ["/usr/sbin/sshd", "-D"]
+RUN echo '#!/bin/bash\n/usr/sbin/sshd -D&\nsu vscode -c "code tunnel --accept-server-license-terms"' > /entrypoint.sh
+
+RUN chmod a+x /entrypoint.sh
+
+CMD ["/entrypoint.sh"]
