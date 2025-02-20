@@ -26,7 +26,8 @@ RUN apt-get update \
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
-    libgsl0-dev libsqlite3-dev libfreetype6-dev libfontconfig1-dev libssl-dev libboost-all-dev libopenblas-dev libhdf5-dev
+    libgsl0-dev libsqlite3-dev libfreetype6-dev libfontconfig1-dev libssl-dev libboost-all-dev libopenblas-dev libhdf5-dev \
+    liblapacke-dev libsuitesparse-dev
 
 ###############################
 RUN useradd -m -d /home/vscode -s /bin/bash vscode
@@ -51,9 +52,9 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 RUN /home/vscode/.cargo/bin/rustup component add rust-analysis rust-src rls
 
 ###############################
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+#RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
-RUN export NVM_DIR="$HOME/.nvm" && \. "$NVM_DIR/nvm.sh" && \. "$NVM_DIR/bash_completion" && nvm install node
+#RUN export NVM_DIR="$HOME/.nvm" && \. "$NVM_DIR/nvm.sh" && \. "$NVM_DIR/bash_completion" && nvm install node
 
 ###############################
 

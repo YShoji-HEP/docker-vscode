@@ -22,8 +22,8 @@ The container can be accessed via VSCode Remote SSH. To use VSCode Remote Tunnel
 ### Rust
 * stable
 
-### Node.js
-* node via nvm
+### ~~Node.js~~
+* ~~node via nvm~~
 
 ### Library
 * gsl
@@ -31,6 +31,8 @@ The container can be accessed via VSCode Remote SSH. To use VSCode Remote Tunnel
 * openblas
 * hdf5
 * ssl
+* lapack
+* suitesparse
 
 ## Install TeX Live
 Mount an external volume to `/usr/local/texlive` and run the following to install TeX Live.
