@@ -60,7 +60,7 @@ RUN /home/vscode/.cargo/bin/rustup component add rust-analysis rust-src rls
 
 USER root
 
-RUN echo -e '#!/bin/bash\n/usr/sbin/sshd -D&\nif [[ -z "${VSCODE_TUNNEL}" ]]; then\n tail -f /dev/null\nelse\n su vscode -c "code tunnel --accept-server-license-terms"\nfi' > /entrypoint.sh
+RUN echo '#!/bin/bash\n/usr/sbin/sshd -D&\nif [[ -z "${VSCODE_TUNNEL}" ]]; then\n tail -f /dev/null\nelse\n su vscode -c "code tunnel --accept-server-license-terms"\nfi' > /entrypoint.sh
 
 RUN chmod a+x /entrypoint.sh
 
