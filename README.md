@@ -1,6 +1,6 @@
 # Development environment for VSCode Remote SSH
 ## Description
-LaTeX, Python3, C++, Fortran, Rust for VSCode Remote SSH/Tunnel.
+LaTeX, Python3, C++, Fortran, Rust for VSCode Remote SSH/Tunnel. Set `VSCODE_TUNNEL` environmental variable to enable VSCode Remote Tunnel.
 
 The container can be accessed via VSCode Remote SSH. To use VSCode Remote Tunnel, see the log of the container.
 
