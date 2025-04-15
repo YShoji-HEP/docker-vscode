@@ -15,7 +15,9 @@ RUN apt-get update \
 ###############################
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
-    screen curl git unzip vim openssh-server gnupg gnupg2 rsync
+    screen curl git unzip vim openssh-server gnupg gnupg2 rsync locales
+
+RUN locale-gen en_US.UTF-8
 
 RUN mkdir /run/sshd
 
