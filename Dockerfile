@@ -19,7 +19,7 @@ RUN apt-get update \
 
 RUN locale-gen en_US.UTF-8
 
-RUN mkdir /run/sshd
+# RUN mkdir /run/sshd
 
 ###############################
 RUN apt-get update \
