@@ -51,7 +51,7 @@ RUN echo 'export INFOPATH="$INFOPATH:/usr/local/texlive/texmf-dist/doc/info"' >>
 ###############################
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
-RUN /home/vscode/.cargo/bin/rustup component add rust-analyzer rust-src miri
+RUN /home/vscode/.cargo/bin/rustup component add rust-analyzer rust-src
 
 ###############################
 #RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
